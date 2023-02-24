@@ -1,7 +1,8 @@
+import { getDatabase, push, ref, set } from "firebase/database";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import database from "./firebase";
+import { db } from "./firebase";
 import "./Landing.css";
 
 function Landing() {
@@ -9,21 +10,23 @@ function Landing() {
   const [sessionid, setSessionId] = useState("");
 
   const handleCreateClick = () => {
-    const newSessionRef = database.ref("sessions").push();
+    const newSessionRef = push(ref(db, "sessions"));
     const newSessionId = newSessionRef.key;
-    newSessionRef
-      .set({
-        code: "// Enter your code here",
-      })
-      .then(() => {
-        setSessionId(newSessionId);
-        console.log("created");
-        navigate("/codeeditor", {
-          state: {
-            id: newSessionId,
-          },
-        });
-      });
+    set(ref(db, `sessions/${newSessionId}/code`), "// Enter your code here");
+
+    navigate("/codeeditor", {
+      state: {
+        id: newSessionId,
+      },
+    });
+  };
+
+  const handleJoinClick = () => {
+    navigate("/codeeditor", {
+      state: {
+        id: sessionid,
+      },
+    });
   };
   return (
     <div className="landing">
@@ -40,7 +43,9 @@ function Landing() {
           placeholder="Enter session Id"
           className="join__input"
         />
-        <button className="join__btn">Join</button>
+        <button className="join__btn" onClick={handleJoinClick}>
+          Join
+        </button>
       </div>
     </div>
   );
