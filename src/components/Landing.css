@@ -4,7 +4,9 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  background-color: #2b2e4a;
 }
+
 .landing__create {
   display: flex;
   align-items: center;
@@ -24,14 +26,22 @@
 
 .create__btn {
   padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
-  font-size: 20px;
   font-weight: bolder;
   border-radius: 10px;
-  background-color: #e7f6f2;
+  background-color: #e84545;
+  color: #ffff;
+  font-family: "Poppins", sans-serif;
   border: none;
+  font-size: 35px;
+  padding: 8px;
+  width: 220px;
+  transition: all 0.5s;
   cursor: pointer;
+  margin: 36px;
+}
+.create__btn:hover {
+  padding-right: 24px;
+  padding-left: 8px;
 }
 
 .join__input {
@@ -46,13 +56,59 @@
 }
 
 .join__btn {
-  padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
+  font-size: 25px;
+  padding: 8px;
+  width: 150px;
   font-size: 20px;
   font-weight: bolder;
   border-radius: 10px;
-  background-color: #e7f6f2;
+  background-color: #e84545;
+  color: #e7f6f2;
+  transition: all 0.5s;
+  font-family: "Poppins", sans-serif;
   border: none;
   cursor: pointer;
+}
+.join__btn:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 192px;
+}
+
+.wave .shape-fill {
+  fill: #903749;
+}
+.wave2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave2 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 192px;
+}
+
+.wave2 .shape-fill {
+  fill: #903749;
 }
