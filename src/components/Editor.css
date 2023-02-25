@@ -1,13 +1,32 @@
 .editor__container {
   height: 100vh;
   background-color: white;
-  max-height: 90vh;
+  overflow: hidden;
 }
 
 .navbar__options {
   display: flex;
   justify-content: space-around;
-  padding: 30px;
+  padding: 10px 0 10px 0;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+.language__select {
+  display: flex;
+  align-items: center;
+  padding: 4px 0 4px 0;
+  border-radius: 5px;
+  color: white;
+  background-color: #537fe7;
+  font-family: "Poppins", sans-serif;
+  -webkit-box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border: none;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
 }
 
 .editor__body {
@@ -15,29 +34,80 @@
   width: 100%;
   height: 100%;
 }
-
+.run__btn {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px 4px 10px;
+  color: white;
+  border-radius: 5px;
+  background-color: #e90064;
+  border: none;
+  -webkit-box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  margin: 0 10px 0 10px;
+}
+.theme_selection_container {
+  display: flex;
+  align-items: center;
+  padding: 4px 5px 4px 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  margin: 0 10px 0 10px;
+}
+.theme_selection_container label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.theme_selection_container select {
+  cursor: pointer;
+}
+.theme_selection_container select:focus {
+  outline: none;
+}
+.theme__selection {
+  font-size: 15px;
+  border: none;
+}
+.nav__title {
+  display: flex;
+  justify-content: center;
+}
+.session__id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
 .editor__body__left {
   flex-grow: 4;
+  padding: 20px;
+  height: 50%;
 }
 
 .editor__body__right {
   flex-grow: 1;
-  height: 100%;
+  height: 95vh;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: white;
 }
 
 .right__input {
   height: 200px;
-  width: 250px;
+  width: 300px;
   resize: none;
 }
 
 .right__output {
   height: 200px;
-  width: 250px;
+  width: 300px;
   flex-grow: 1;
   resize: none;
 }
